@@ -1,0 +1,248 @@
+:root {
+  --paper: #f7f4ee;
+  --ink: #1b1d19;
+  --muted: #686d64;
+  --line: #d9d2c7;
+  --card: #fffdf8;
+  --accent: #9d604b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.5fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+  min-height: 44vh;
+  padding: clamp(26px, 5vw, 54px) 0 clamp(22px, 3vw, 34px);
+}
+
+.intro-copy {
+  max-width: 640px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: clamp(2.5rem, 5.4vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.intro-line {
+  max-width: 480px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.45;
+}
+
+.intro-image {
+  margin: 0;
+  justify-self: end;
+  width: min(100%, 320px);
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.intro-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(0.18) sepia(0.2) saturate(0.72) hue-rotate(350deg) brightness(1.04) contrast(0.92);
+}
+
+.projects,
+.contact {
+  padding: clamp(20px, 3vw, 32px) 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 170px;
+  padding: 20px;
+  color: #fffdf8;
+  background-image: linear-gradient(to top, rgba(18, 20, 17, 0.58), rgba(18, 20, 17, 0.04)), url("assets/hero-workspace.png");
+  background-size: cover;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-card-one {
+  background-position: center;
+}
+
+.project-card-two {
+  background-position: 28% 50%;
+}
+
+.project-card-three {
+  background-position: 72% 50%;
+}
+
+.project-card span {
+  margin-bottom: 8px;
+  color: rgba(255, 253, 248, 0.78);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.project-card p {
+  margin-bottom: 0;
+  color: rgba(255, 253, 248, 0.86);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.contact h2 {
+  margin-bottom: 18px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 18px 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.contact-grid svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.contact-grid a:hover,
+.contact-grid a:focus-visible {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 14px 0 18px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  font-weight: 700;
+}
+
+@media (max-width: 780px) {
+  .intro,
+  .project-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    min-height: auto;
+  }
+
+  h1 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  main,
+  .site-footer {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .project-card {
+    min-height: 136px;
+  }
+}
