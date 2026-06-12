@@ -66,11 +66,11 @@ h1 {
 }
 
 .intro-line {
-  max-width: 480px;
+  max-width: 720px;
   margin-bottom: 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
-  line-height: 1.45;
+  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+  line-height: 1.42;
 }
 
 .intro-image {
@@ -110,9 +110,9 @@ h2 {
 
 .project-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-rows: 1fr 0.9rem 2.8rem 4.2rem;
+  align-items: start;
   min-height: 170px;
   padding: 20px;
   color: #fffdf8;
@@ -143,21 +143,27 @@ h2 {
 }
 
 .project-card span {
-  margin-bottom: 8px;
+  display: block;
+  grid-row: 2;
+  margin-bottom: 0;
   color: rgba(255, 253, 248, 0.78);
   font-size: 0.72rem;
+  line-height: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .project-card h3 {
-  margin-bottom: 6px;
+  grid-row: 3;
+  align-self: start;
+  margin-bottom: 0;
   font-size: 1.15rem;
   line-height: 1.2;
 }
 
 .project-card p {
+  grid-row: 4;
   margin-bottom: 0;
   color: rgba(255, 253, 248, 0.86);
   font-size: 0.92rem;
