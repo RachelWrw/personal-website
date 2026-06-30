@@ -109,6 +109,8 @@ h2 {
 }
 
 .project-card {
+  --project-bg: #8f6f5a;
+
   position: relative;
   display: grid;
   grid-template-rows: 1fr 0.9rem 2.8rem 4.2rem;
@@ -116,8 +118,7 @@ h2 {
   min-height: 170px;
   padding: 20px;
   color: #fffdf8;
-  background-image: linear-gradient(to top, rgba(18, 20, 17, 0.58), rgba(18, 20, 17, 0.04)), url("assets/hero-workspace.png");
-  background-size: cover;
+  background: var(--project-bg);
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -131,15 +132,23 @@ h2 {
 }
 
 .project-card-one {
-  background-position: center;
+  --project-bg: #9d604b;
 }
 
 .project-card-two {
-  background-position: 28% 50%;
+  --project-bg: #667063;
 }
 
 .project-card-three {
-  background-position: 72% 50%;
+  --project-bg: #b1906f;
+}
+
+.project-card-four {
+  --project-bg: #6d7f87;
+}
+
+.project-card-five {
+  --project-bg: #8f6f5a;
 }
 
 .project-card span {
