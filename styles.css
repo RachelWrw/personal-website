@@ -73,6 +73,11 @@ h1 {
   line-height: 1.42;
 }
 
+.intro-line a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .intro-image {
   margin: 0;
   justify-self: center;
@@ -234,6 +239,129 @@ h2 {
   font-weight: 700;
 }
 
+.project-page {
+  padding-top: clamp(24px, 5vw, 52px);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  margin-bottom: clamp(24px, 5vw, 52px);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--ink);
+}
+
+.project-page-hero {
+  max-width: 900px;
+  padding-bottom: clamp(24px, 4vw, 44px);
+}
+
+.project-page-hero .intro-line {
+  max-width: 900px;
+}
+
+.project-page-hero h1 {
+  margin-bottom: 14px;
+  font-size: clamp(2.35rem, 5vw, 4.4rem);
+}
+
+.project-kicker {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.plushie-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: clamp(20px, 3vw, 32px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.plushie-card {
+  display: grid;
+  gap: 12px;
+}
+
+.plushie-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.plushie-final {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pikachu-image .plushie-final {
+  object-position: center 18%;
+}
+
+.plushie-progress {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(27, 29, 25, 0.18);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.plushie-progress:has(.plushie-progress-image:nth-child(1):last-child) {
+  grid-template-columns: 1fr;
+}
+
+.plushie-progress:has(.plushie-progress-image:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.plushie-card:hover .plushie-progress,
+.plushie-card:focus-within .plushie-progress {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plushie-progress-image {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: rgba(255, 253, 248, 0.28);
+  border: 1px solid rgba(255, 253, 248, 0.34);
+  border-radius: 6px;
+}
+
+.plushie-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 780px) {
   .intro,
   .project-grid,
@@ -247,6 +375,15 @@ h2 {
 
   h1 {
     white-space: normal;
+  }
+
+  .plushie-progress {
+    opacity: 1;
+    transform: none;
+  }
+
+  .plushie-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
