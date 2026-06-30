@@ -115,7 +115,7 @@ h2 {
   display: grid;
   grid-template-rows: 1fr 0.9rem 2.8rem 4.2rem;
   align-items: start;
-  min-height: 170px;
+  min-height: 190px;
   padding: 20px;
   color: #fffdf8;
   background: var(--project-bg);
@@ -175,7 +175,7 @@ h2 {
   grid-row: 4;
   margin-bottom: 0;
   color: rgba(255, 253, 248, 0.86);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   line-height: 1.35;
 }
 
